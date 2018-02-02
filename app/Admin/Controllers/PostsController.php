@@ -44,13 +44,21 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        return Admin::content(function (Content $content) use ($id) {
+        // $header = "Edit Post"; $description = "";
+        // $post = Post::find($id);
+        // $categories = Category::all()->pluck(['id' => 'category_name']);
+        //
+        // return view('posts.edit')->with([
+        //   'header' => $header, 'description' => $description, 'post' => $post, 'categories' => $categories,
+        // ]);
 
-            $content->header('header');
-            $content->description('description');
-
-            $content->body($this->form()->edit($id));
-        });
+        // return Admin::content(function (Content $content) use ($id) {
+        //
+        //     $content->header('header');
+        //     $content->description('description');
+        //
+        //     $content->body($this->form()->edit($id));
+        // });
     }
 
     /**
@@ -62,8 +70,12 @@ class PostsController extends Controller
     {
         $header = "New Post";
         $description = "";
+        $post = new Post();
+        $categories = Category::all()->pluck(['id' => 'category_name']);
 
-        return view('posts.create')->with(['header' => $header, 'description' => $description]);
+        return view('posts.create')->with([
+          'header' => $header, 'description' => $description, 'post' => $post, 'categories' => $categories,
+        ]);
         // return Admin::content(function (Content $content) {
         //
         //     $content->header('header');
@@ -78,9 +90,9 @@ class PostsController extends Controller
         Post::create([
         'title' => $request->title,
         'content' => $request->content,
-        'top_image' => $request->image,
+        // 'top_image' => $request->image,
         'user_id' => Admin::user()->id,
-        'category_id' => $request->category_id,
+        'category_id' => $request->category_id + 1,
         ]);
 
         return redirect("admin/posts");
@@ -114,15 +126,6 @@ class PostsController extends Controller
 
             // desplay means show the field in edit screeen
             $form->display('id', 'ID');
-
-            $form->text('title');
-            $form->textarea('content')->rows(20);
-
-             
-            $form->select('category_id')->options(Category::all()->pluck('category_name', 'id'));
-            //$form->hasMany('categories', function (Form\NestedForm $form) {
-            //    $form->select('category_name')->options([1 => 'english']);
-            //});
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
