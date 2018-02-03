@@ -83,6 +83,7 @@ class PostsController extends Controller
     {
         $fileName = $request['image']->getClientOriginalName();
         Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
+        dd($request);
         Post::create([
             'title' => $request->title,
             'content' => $request->content,
