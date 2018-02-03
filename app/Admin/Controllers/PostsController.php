@@ -7,6 +7,7 @@ use App\Category;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Image;
 
 // use Encore\Admin;
 use Encore\Admin\Form;
@@ -76,23 +77,18 @@ class PostsController extends Controller
         return view('posts.create')->with([
           'header' => $header, 'description' => $description, 'post' => $post, 'categories' => $categories,
         ]);
-        // return Admin::content(function (Content $content) {
-        //
-        //     $content->header('header');
-        //     $content->description('description');
-        //
-        //     $content->body($this->form());
-        // });
     }
 
     public function store(Request $request)
     {
+        $fileName = $request['image']->getClientOriginalName();
+        Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
         Post::create([
-        'title' => $request->title,
-        'content' => $request->content,
-        // 'top_image' => $request->image,
-        'user_id' => Admin::user()->id,
-        'category_id' => $request->category_id + 1,
+            'title' => $request->title,
+            'content' => $request->content,
+            'top_image' => $fileName,
+            'user_id' => Admin::user()->id,
+            'category_id' => $request->category_id + 1,
         ]);
 
         return redirect("admin/posts");
