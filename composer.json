@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "encore/laravel-admin": "1.2.*",
         "laravelcollective/html": "5.2.*",
-        "intervention/image": "^2.4"
+        "intervention/image": "^2.4",
+        "psy/psysh": "@stable"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
