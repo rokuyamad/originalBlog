@@ -98,6 +98,21 @@ class PostsController extends Controller
         return redirect("admin/posts");
     }
 
+    public function destroy($id)
+    {
+        if ($this->form()->destroy($id)) {
+            return response()->json([
+                'status'  => true,
+                'message' => trans('admin::lang.delete_succeeded'),
+            ]);
+        } else {
+            return response()->json([
+                'status'  => false,
+                'message' => trans('admin::lang.delete_failed'),
+            ]);
+        }
+    }
+
     /**
      * Make a grid builder.
      *
@@ -124,7 +139,6 @@ class PostsController extends Controller
     {
         return Admin::form(Post::class, function (Form $form) {
 
-            // desplay means show the field in edit screeen
             $form->display('id', 'ID');
 
             $form->display('created_at', 'Created At');
