@@ -72,10 +72,13 @@ class PostsController extends Controller
         $header = "New Post";
         $description = "";
         $post = new Post();
-        $categories = Category::all()->pluck(['id' => 'category_name']);
+        $categories = Category::all()->pluck('category_name', 'id');
 
         return view('posts.create')->with([
-          'header' => $header, 'description' => $description, 'post' => $post, 'categories' => $categories,
+            'header'      => $header,
+            'description' => $description,
+            'post'        => $post,
+            'categories'  => $categories,
         ]);
     }
 
@@ -83,13 +86,13 @@ class PostsController extends Controller
     {
         $fileName = $request['image']->getClientOriginalName();
         Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
-        dd($request);
+
         Post::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'top_image' => $fileName,
-            'user_id' => Admin::user()->id,
-            'category_id' => $request->category_id + 1,
+            'title'       => $request->title,
+            'content'     => $request->content,
+            'top_image'   => $fileName,
+            'user_id'     => Admin::user()->id,
+            'category_id' => $request->category_id,
         ]);
 
         return redirect("admin/posts");
