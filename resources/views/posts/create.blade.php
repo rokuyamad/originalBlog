@@ -26,11 +26,11 @@
 
     <section class="content">
       <div class="container">
-        {{ Form::open(array('url' => '/admin/posts')) }}
+        {!! Form::model($post, ['url' => "/admin/posts", 'files' => true]) !!}
 
           <div class="form-group col-md-12">
-            <label>Title</label>
-            <input type="text" name="title" class="form-control" placeholder="タイトルを入力してください。">
+            {!! Form::label('title', 'Title') !!}
+            {!! Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'タイトルを入力してください。']) !!}
           </div>
 
           <div class="form-group col-md-4">
@@ -38,7 +38,7 @@
             <div class="input-group" style="margin-bottom:15px">
               <label class="input-group-btn">
                 <span class="btn btn-primary">
-                  Choose top image<input type="file" name="image" style="display:none">
+                  Choose top image{!! Form::file('image', ['style' => 'display:none']) !!}
                 </span>
               </label>
               <input type="text" class="form-control" readonly="">
@@ -47,16 +47,13 @@
 
           <div class="form-group col-md-8">
             <div class="form-group">
-              <label>Category</label>
-              <select class="form-control" name="category_id">
-                <option>1</option>
-                <option>2</option>
-              </select>
+              {!! Form::label('category') !!}
+              {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-              <label>Tags</label>
-              <input type="text" name="tags" class="form-control" placeholder="タグを入力してください。">
+              {!! Form::label('tags') !!}
+              {!! Form::text('tags', '', ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
             </div>
           </div>
 
@@ -78,7 +75,7 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="form-group">
-                  <textarea  name="content" class="form-control" rows="20" required="required" placeholder="記事内容を入力してください。"></textarea>
+                  {!! Form::textarea('content', '', ['class' => 'form-control', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい。']) !!}
                 </div>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -86,10 +83,10 @@
           </div>
 
           <div class="form-group col-md-12">
-              <button type="submit" class="btn btn-primary form-control">SENT</button>
+            {{ Form::submit('Click Me!', ['class' => 'btn btn-primary form-control']) }}
           </div>
 
-        {{ Form::close() }}
+        {!! Form::close() !!}
       </div>
     </section>
 
@@ -109,6 +106,11 @@
                 input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
             }
         }
+    });
+
+    $('#tags').tagsInput({
+        'height':'34px',
+        'width':'730px',
     });
     </script>
 
