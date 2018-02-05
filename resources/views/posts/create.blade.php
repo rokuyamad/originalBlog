@@ -49,15 +49,11 @@
             <div class="form-group">
               {!! Form::label('category') !!}
               {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
-              <!-- <select class="form&#45;control" name="category_id"> -->
-              <!--   <option>1</option> -->
-              <!--   <option>2</option> -->
-              <!-- </select> -->
             </div>
 
             <div class="form-group">
               {!! Form::label('tags') !!}
-              {!! Form::text('tags', '', ['class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
+              {!! Form::text('tags', '', ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
             </div>
           </div>
 
@@ -110,6 +106,11 @@
                 input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
             }
         }
+    });
+
+    $('#tags').tagsInput({
+        'height':'34px',
+        'width':'730px',
     });
     </script>
 
