@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -87,13 +88,24 @@ class PostsController extends Controller
         $fileName = $request['image']->getClientOriginalName();
         Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
 
-        Post::create([
+        $post = Post::create([
             'title'       => $request->title,
             'content'     => $request->content,
             'top_image'   => $fileName,
             'user_id'     => Admin::user()->id,
             'category_id' => $request->category_id,
         ]);
+
+        $tag_names = preg_split('/[\s,]+/', $request->tags, -1, PREG_SPLIT_NO_EMPTY);
+        $tag_ids = [];
+        foreach ($tag_names as $tag_name) {
+            $tag = Tag::firstOrCreate([
+                'tag_name' => $tag_name,
+            ]);
+            $tag_ids[] = $tag->id;
+        }
+
+        $post->tags()->sync($tag_ids);
 
         return redirect("admin/posts");
     }
