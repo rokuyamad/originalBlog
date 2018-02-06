@@ -46,21 +46,20 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        // $header = "Edit Post"; $description = "";
-        // $post = Post::find($id);
-        // $categories = Category::all()->pluck(['id' => 'category_name']);
-        //
-        // return view('posts.edit')->with([
-        //   'header' => $header, 'description' => $description, 'post' => $post, 'categories' => $categories,
-        // ]);
+        $header = "Edit Post";
+        $description = "";
+        $post = Post::find($id);
+        $categories = Category::all()->pluck('category_name', 'id');
+        $tags = $post->tags->pluck('tag_name')->toArray();
+        $tags_comma_separated = implode(",", $tags);
 
-        // return Admin::content(function (Content $content) use ($id) {
-        //
-        //     $content->header('header');
-        //     $content->description('description');
-        //
-        //     $content->body($this->form()->edit($id));
-        // });
+        return view('posts.edit')->with([
+            'header'               => $header,
+            'description'          => $description,
+            'post'                 => $post,
+            'categories'           => $categories,
+            'tags_comma_separated' => $tags_comma_separated,
+        ]);
     }
 
     /**

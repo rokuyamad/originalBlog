@@ -30,7 +30,7 @@
 
           <div class="form-group col-md-12">
             {!! Form::label('title', 'Title') !!}
-            {!! Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'タイトルを入力してください。']) !!}
+            {!! Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'タイトルを入力してください。']) !!}
           </div>
 
           <div class="form-group col-md-4">
@@ -48,12 +48,12 @@
           <div class="form-group col-md-8">
             <div class="form-group">
               {!! Form::label('category') !!}
-              {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+              {!! Form::select('category_id', $categories, $post->category_name, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
               {!! Form::label('tags') !!}
-              {!! Form::text('tags', '', ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
+              {!! Form::text('tags', $tags_comma_separated, ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
             </div>
           </div>
 
@@ -75,7 +75,7 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="form-group">
-                  {!! Form::textarea('content', '', ['class' => 'form-control', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい。']) !!}
+                  {!! Form::textarea('content', $post->content, ['class' => 'form-control', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい。']) !!}
                 </div>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
