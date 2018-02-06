@@ -26,7 +26,7 @@
 
     <section class="content">
       <div class="container">
-        {!! Form::model($post, ['url' => "/admin/posts", 'files' => true]) !!}
+        {!! Form::model($post, ['url' => "/admin/posts/{$post->id}", 'method' => 'patch', 'files' => true]) !!}
 
           <div class="form-group col-md-12">
             {!! Form::label('title', 'Title') !!}

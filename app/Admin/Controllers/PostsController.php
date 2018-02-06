@@ -42,7 +42,7 @@ class PostsController extends Controller
      * Edit interface.
      *
      * @param $id
-     * @return Content
+     * @return view
      */
     public function edit($id)
     {
@@ -65,7 +65,7 @@ class PostsController extends Controller
     /**
      * Create interface.
      *
-     * @return Content
+     * @return void
      */
     public function create()
     {
@@ -82,6 +82,49 @@ class PostsController extends Controller
         ]);
     }
 
+    /**
+     * Update action.
+     *
+     * @return "/admin/posts"
+     */
+    public function update($id, Request $request)
+    {
+        $post = Post::find($id);
+
+        $post->update([
+        'title'       => $request->title,
+        'content'     => $request->content,
+        'user_id'     => Admin::user()->id,
+        'category_id' => $request->category_id,
+        ]);
+
+        if ($request['image']) {
+            $fileName = $request['image']->getClientOriginalName();
+            Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
+
+            $post->update([
+            'top_image'   => $fileName,
+            ]);
+        }
+
+        $tag_names = preg_split('/[\s,]+/', $request->tags, -1, PREG_SPLIT_NO_EMPTY);
+        $tag_ids = [];
+        foreach ($tag_names as $tag_name) {
+            $tag = Tag::firstOrCreate([
+                'tag_name' => $tag_name,
+            ]);
+            $tag_ids[] = $tag->id;
+        }
+        $post->tags()->sync($tag_ids);
+
+        return redirect("admin/posts");
+    }
+
+    /**
+     * Store action.
+     *
+     * @return "/admin/posts"
+     */
     public function store(Request $request)
     {
         $fileName = $request['image']->getClientOriginalName();
@@ -109,6 +152,12 @@ class PostsController extends Controller
         return redirect("admin/posts");
     }
 
+    /**
+     * Destroy action.
+     *
+     * @param $id
+     * @return "/admin/posts"
+     */
     public function destroy($id)
     {
         if ($this->form()->destroy($id)) {
