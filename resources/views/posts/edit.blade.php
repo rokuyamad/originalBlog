@@ -12,7 +12,16 @@
           display: inline-block;
       }
       .navbar-inverse {
-        background-color: #000022;
+        background-color: #222d32;
+        padding-bottom: 35px;
+      }
+      div.tagsinput span.tag {
+        background-color: #222d32;
+        border:1px solid #222d32;
+        color: white;
+      }
+      div.tagsinput span.tag a {
+        color: #9d9d9d;
       }
   </style>
 
