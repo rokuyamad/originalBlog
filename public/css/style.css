@@ -1,0 +1,47 @@
+.index {
+  position:relative;
+  padding-top: 89px;
+}
+
+.header {
+  margin: 0px 30px;
+  padding: 25px 0px;
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.aside {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  margin-bottom: 0;
+}
+
+.aside li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#main {
+  border-top: 1px solid #edf0f4;
+}
+
+#main div {
+  height: 842px;
+}
+
+#main .col-md-3 {
+  padding-left: 25px;
+  padding-right: 15px;
+}
+
+#profile {
+  border-right: 1px solid #edf0f4;
+}
