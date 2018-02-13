@@ -37,6 +37,12 @@
   height: 842px;
 }
 
+#main .col-md-2 {
+  padding: 0;
+  padding-top: 25px;
+  margin-right: 25px;
+}
+
 #main .col-md-3 {
   padding-left: 25px;
   padding-right: 15px;
