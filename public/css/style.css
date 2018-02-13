@@ -33,7 +33,7 @@
   border-top: 1px solid #edf0f4;
 }
 
-#main div {
+#main .column {
   height: 842px;
 }
 
@@ -50,4 +50,39 @@
 
 #profile {
   border-right: 1px solid #edf0f4;
+}
+
+#profile .outer .picture {
+  margin: 0 auto 20px;
+  height: 150px;
+  width: 150px;
+} 
+
+#profile .outer .picture img {
+  height: 150px;
+  width: 150px;
+} 
+
+#profile .outer .mynameis {
+  margin: 0 auto 20px;
+  width: 150px;
+  /* text-align: center; */
+}
+
+#profile .outer .links {
+  margin: 0 auto 20px;
+  width: 150px;
+}
+
+#profile .outer .links ul {
+  padding: 0;
+}
+
+#profile .outer .links ul li {
+  list-style: none;
+  line-height: 25px;
+}
+
+#profile .outer .links ul li i {
+  margin-right: 0.3em;
 }
