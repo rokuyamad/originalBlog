@@ -48,12 +48,12 @@ return [
 
         'disk' => 'admin',
 
-        'directory'  => [
-            'image'  => 'image',
-            'file'   => 'file',
-        ],
+        // 'directory'  => [
+        //     'image'  => 'image',
+        //     'file'   => 'file',
+        // ],
 
-        'host' => 'http://localhost:8000/upload/',
+        // 'host' => 'http://localhost:8000/upload/',
     ],
 
     /*
