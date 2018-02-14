@@ -1,6 +1,8 @@
 .index {
   position:relative;
+  overflow: hidden;
   padding-top: 89px;
+  /* background-color: #61b1c8; */
 }
 
 .header {
@@ -18,7 +20,7 @@
 
 .aside {
   position: absolute;
-  right: 0;
+  right: 28px;
   top: 28px;
   margin-bottom: 0;
 }
@@ -29,31 +31,33 @@
   margin-left: 20px;
 }
 
-#main {
-  border-top: 1px solid #edf0f4;
-}
-
-#main .column {
+.index .column {
   height: 842px;
 }
 
-#main .col-md-2 {
-  padding: 0;
-  padding-top: 25px;
-  margin-right: 25px;
-}
+#main {
+  border-top: 1px solid #edf0f4;
 
-#main .col-md-3 {
-  padding-left: 25px;
-  padding-right: 15px;
 }
 
 #profile {
+  float: left;
+  width: 200px;
+  padding-top: 15px;
   border-right: 1px solid #edf0f4;
 }
 
+#content {
+  float: left;
+  width: 80%;
+}
+
+#profile .outer {
+  width: 200px;
+}
+
 #profile .outer .picture {
-  margin: 0 auto 20px;
+  margin: 0 auto 25px;
   height: 150px;
   width: 150px;
 } 
@@ -64,13 +68,12 @@
 } 
 
 #profile .outer .mynameis {
-  margin: 0 auto 20px;
+  margin: 0 25px;
   width: 150px;
-  /* text-align: center; */
 }
 
 #profile .outer .links {
-  margin: 0 auto 20px;
+  margin: 0 25px;
   width: 150px;
 }
 
@@ -86,3 +89,40 @@
 #profile .outer .links ul li i {
   margin-right: 0.3em;
 }
+
+#content .row {
+  margin: 50px;
+  height: 742px;
+}
+
+#content .row .col-md-3 {
+  padding: 0;
+  height: 350px;
+  background-color: #e8e8e7;
+  cursor: pointer;
+}
+
+#content .row .col-md-3 img{
+  height: 200px;
+  width: 100%;
+}
+
+#content .row .col-md-3 .button{
+  padding: 15px 15px 0;
+}
+
+#content .row .col-md-3 h2{
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  padding: 15px 15px 0;
+}
+
+#content .row .col-md-3 h2 a {
+  color: black;
+}
+
+#pagination {
+  clear: both;
+}
+
