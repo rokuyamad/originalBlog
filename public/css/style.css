@@ -1,0 +1,128 @@
+.index {
+  position:relative;
+  overflow: hidden;
+  padding-top: 89px;
+  /* background-color: #61b1c8; */
+}
+
+.header {
+  margin: 0px 30px;
+  padding: 25px 0px;
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.aside {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  margin-bottom: 0;
+}
+
+.aside li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.index .column {
+  height: 842px;
+}
+
+#main {
+  border-top: 1px solid #edf0f4;
+
+}
+
+#profile {
+  float: left;
+  width: 200px;
+  padding-top: 15px;
+  border-right: 1px solid #edf0f4;
+}
+
+#content {
+  float: left;
+  width: 80%;
+}
+
+#profile .outer {
+  width: 200px;
+}
+
+#profile .outer .picture {
+  margin: 0 auto 25px;
+  height: 150px;
+  width: 150px;
+} 
+
+#profile .outer .picture img {
+  height: 150px;
+  width: 150px;
+} 
+
+#profile .outer .mynameis {
+  margin: 0 25px;
+  width: 150px;
+}
+
+#profile .outer .links {
+  margin: 0 25px;
+  width: 150px;
+}
+
+#profile .outer .links ul {
+  padding: 0;
+}
+
+#profile .outer .links ul li {
+  list-style: none;
+  line-height: 25px;
+}
+
+#profile .outer .links ul li i {
+  margin-right: 0.3em;
+}
+
+#content .row {
+  margin: 50px;
+  height: 742px;
+}
+
+#content .row .col-md-3 {
+  padding: 0;
+  height: 350px;
+  background-color: #e8e8e7;
+  cursor: pointer;
+}
+
+#content .row .col-md-3 img{
+  height: 200px;
+  width: 100%;
+}
+
+#content .row .col-md-3 .button{
+  padding: 15px 15px 0;
+}
+
+#content .row .col-md-3 h2{
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  padding: 15px 15px 0;
+}
+
+#content .row .col-md-3 h2 a {
+  color: black;
+}
+
+#pagination {
+  clear: both;
+}
+
