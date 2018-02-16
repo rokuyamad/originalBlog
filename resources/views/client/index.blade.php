@@ -17,7 +17,9 @@
         </h2>
       </div>
     @endforeach
-    {{ $posts->render() }}
+    <div id="paginaton">
+      {{ $posts->render() }}
+    </div>
   </div>
 
 
