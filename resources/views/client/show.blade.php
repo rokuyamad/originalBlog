@@ -13,10 +13,23 @@
 
   <div class="main">
     <div class="article">
+
       <div class="eyecatch-cover">
         <div class="eyecatch">
+          <img src="{{ asset("/image/topImages/{$post->top_image}") }}" alt="">
         </div>
       </div>
+
+      <header>
+        <h1>{{ $post->title }}</h1>
+        <div class="date">
+          {{ $post->created_at->format('Y.m.d') }} [
+          <a href="/">{{ $post->category->category_name }}</a>
+          ]
+        </div>
+      </header>
+
+      <section>{{ $post->content }}</section>
     </div>
   </div>
 

@@ -15,8 +15,9 @@ class ClientController extends Controller
         return view('client.index')->with('posts', $posts);
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('client.show');
+        $post = Post::find($id);
+        return view('client.show')->with('post', $post);
     }
 }
