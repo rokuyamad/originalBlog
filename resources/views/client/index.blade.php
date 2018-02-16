@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="row">
+  <div class="row row-eq-height">
     @foreach ($posts as $post)
       <div class="col-md-3">
         <img src="{{ asset("/image/topImages/{$post->top_image}") }}" alt="">

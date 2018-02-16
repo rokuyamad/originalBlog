@@ -20,14 +20,14 @@
         </div>
       </div>
 
-      <header>
+      <div id="article-header">
         <h1>{{ $post->title }}</h1>
         <div class="date">
           {{ $post->created_at->format('Y.m.d') }} [
           <a href="/">{{ $post->category->category_name }}</a>
           ]
         </div>
-      </header>
+      </div>
 
       <section>{{ $post->content }}</section>
     </div>
