@@ -10,24 +10,27 @@
   <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <div class="index">
 
-    <!-- header section -->
-    @include('partials.header')
+  <div class="main">
+    <div class="article">
 
-    <div id="main">
-
-      <div id="main-right" class="column">
-        @yield('content')
+      <div class="eyecatch-cover">
+        <div class="eyecatch">
+          <img src="{{ asset("/image/topImages/{$post->top_image}") }}" alt="">
+        </div>
       </div>
 
-      <!-- profile section -->
-      <div id="profile" class="column">
-        @include('partials.profile')
+      <div id="article-header">
+        <h1>{{ $post->title }}</h1>
+        <div class="date">
+          {{ $post->created_at->format('Y.m.d') }} [
+          <a href="/">{{ $post->category->category_name }}</a>
+          ]
+        </div>
       </div>
 
+      <section>{{ $post->content }}</section>
     </div>
-
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -1,30 +1,6 @@
 @extends('admin::index')
 
 @section('content')
-    <style>
-      .imagePreview {
-          width: 100%;
-          height: 150px;
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
-          display: inline-block;
-      }
-      .navbar-inverse {
-        background-color: #222d32;
-        padding-bottom: 35px;
-      }
-      div.tagsinput span.tag {
-        background-color: #222d32;
-        border:1px solid #222d32;
-        color: white;
-      }
-      div.tagsinput span.tag a {
-        color: #9d9d9d;
-      }
-    </style>
-
     <section class="content-header">
         <h1>
             {{ $header or trans('admin::lang.title') }}
@@ -77,14 +53,15 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Content</a>
-                <a class="navbar-brand" href="#">Preview</a>
+                <a id="eswitch" class="bswitch navbar-brand" href="#">Editor</a>
+                <a id="pswitch" class="bswitch navbar-brand" href="#">Preview</a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="form-group">
-                  {!! Form::textarea('content', '', ['class' => 'form-control', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい。']) !!}
+                <div id="admin-article" class="form-group">
+                  {!! Form::textarea('content', '', ['id' => 'editor', 'class' => 'form-control eswitch', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい']) !!}
+                  {!! Form::textarea('content', '', ['id' => 'preview', 'class' => 'form-control pswitch', 'rows' => '20', 'style' => 'display:none;']) !!}
                 </div>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -98,29 +75,4 @@
         {!! Form::close() !!}
       </div>
     </section>
-
-    <script>
-    $(document).on('change', ':file', function() {
-        var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-        input.parent().parent().next(':text').val(label);
-
-        var files = !!this.files ? this.files : [];
-        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
-        if (/^image/.test( files[0].type)){ // only image file
-            var reader = new FileReader(); // instance of the FileReader
-            reader.readAsDataURL(files[0]); // read the local file
-            reader.onloadend = function(){ // set image data as background of div
-                input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
-            }
-        }
-    });
-
-    $('#tags').tagsInput({
-        'height': '90px',
-        'width' : '730px',
-    });
-    </script>
-
 @endsection

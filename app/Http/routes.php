@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'ClientController@index');
+Route::get('/posts/{id}', 'ClientController@show');
