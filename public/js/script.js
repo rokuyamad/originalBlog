@@ -1,3 +1,18 @@
+$(function() {
+  marked.setOptions({
+    langPrefix: ""
+  });
+
+  $("#editor").keyup(function() {
+    var html = marked($(this).val());
+    $("#preview").html(html);
+
+    $("#preview pre code").each(function(i, e) {
+      hljs.highlightBlock(e, e.className);
+    });
+  });
+});
+
 window.addEventListener("load", function() {
   $(document).on("change", ":file", function() {
     var input = $(this),
@@ -35,7 +50,7 @@ window.addEventListener("load", function() {
   });
 
   $(".bswitch").on("click", function() {
-    $("#admin-article textarea").hide();
+    $("#admin-article .switch").hide();
     $("." + this.id).show();
   });
 });

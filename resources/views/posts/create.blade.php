@@ -47,23 +47,14 @@
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
                 <a id="eswitch" class="bswitch navbar-brand" href="#">Editor</a>
                 <a id="pswitch" class="bswitch navbar-brand" href="#">Preview</a>
               </div>
-
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div id="admin-article" class="form-group">
-                  {!! Form::textarea('content', '', ['id' => 'editor', 'class' => 'form-control eswitch', 'rows' => '20', 'placeholder' => '記事内容を入力して下さい']) !!}
-                  {!! Form::textarea('content', '', ['id' => 'preview', 'class' => 'form-control pswitch', 'rows' => '20', 'style' => 'display:none;']) !!}
-                </div>
-              </div><!-- /.navbar-collapse -->
+              <div id="admin-article" class="form-group">
+                {!! Form::textarea('content', '', ['id' => 'editor', 'class' => 'form-control switch eswitch', 'placeholder' => '記事内容を入力して下さい']) !!}
+                <div id="preview" class="switch pswitch" style="display:none"></div>
+              </div>
             </div><!-- /.container-fluid -->
            </nav>
           </div>
