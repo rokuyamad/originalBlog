@@ -66,4 +66,32 @@
         {!! Form::close() !!}
       </div>
     </section>
+
+    <script>
+      $(document).ready(function() {
+        $('#tags').tagsInput({
+          height: '90px',
+          width: '730px',
+        });
+
+        $('.bswitch').on('click', function() {
+          $('#admin-article .switch').hide();
+          $('.' + this.id).show();
+        });
+
+        marked.setOptions({
+          langPrefix: '',
+        });
+
+        $('#editor').keyup(function() {
+          console.log('hoge');
+          var html = marked($(this).val());
+          $('#preview').html(html);
+
+          $('#preview pre code').each(function(i, e) {
+            hljs.highlightBlock(e, e.className);
+          });
+        });
+      });
+    </script>
 @endsection
