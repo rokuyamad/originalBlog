@@ -33,9 +33,9 @@ header h1 {
   margin-left: 20px;
 }
 
-.index .column {
-  height: 842px;
-}
+/* .index .column { */
+/*   height: 842px; */
+/* } */
 
 #main {
   position: relative;
@@ -48,15 +48,12 @@ header h1 {
   left: 0;
   width: 200px;
   padding-top: 15px;
-  border-right: 1px solid #edf0f4;
 }
 
 #main-right {
   width: 100%;
-}
-
-#profile .outer {
-  width: 200px;
+  padding: 30px;
+  border-left: 1px solid #edf0f4;
 }
 
 #profile .outer .picture {
@@ -93,47 +90,48 @@ header h1 {
   margin-right: 0.3em;
 }
 
-#main-right .row {
-  margin: 50px 50px 0;
-  height: 792px;
-}
-
-#main-right .row .col-md-3 {
-  padding: 0;
-  background-color: #e8e8e7;
-  cursor: pointer;
-  max-height: 356px;
-}
-
-#main-right .row .col-md-3 img {
-  height: 230px;
-  width: 100%;
-}
-
-#main-right .row .col-md-3 .button {
-  padding: 15px 15px 0;
-}
-
-#main-right .row .col-md-3 h2 {
-  font-size: 16px;
-  font-weight: 700;
-  height: 65px;
-  margin: 0;
-  padding: 15px 15px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
-#main-right .row .col-md-3 h2 a {
-  color: black;
-}
-
-#main-right .row-eq-height {
+#main-right .parent-article {
   display: flex;
   flex-wrap: wrap;
+}
+
+#main-right .parent-article article {
+  width: 25%;
+  padding: 0;
+  background-color: #e8e8e7;
+}
+
+#main-right .parent-article article .thumbnail-wrap {
+  position: relative;
+}
+
+#main-right .parent-article article .adjust-box:before {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+
+#main-right .parent-article article .thumbnail-wrap .thumbnail-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#main-right .parent-article article .button {
+  padding: 16px 16px 0;
+}
+#main-right .parent-article article h2 {
+  margin: 0;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#main-right .parent-article article h2 a {
+  color: black;
 }
 
 #paginaton {
@@ -142,6 +140,7 @@ header h1 {
   clear: both;
 }
 
+/* show.blade.php */
 .article {
   background-color: #e8e8e7;
 }
@@ -178,4 +177,33 @@ section {
   font-size: 12px;
   font-weight: 600;
   color: #adaaa5;
+}
+
+@media screen and (max-width: 480px) {
+  .aside {
+    display: none;
+  }
+
+  #main-right .parent-article article {
+    width: 100%;
+  }
+
+  #main {
+    padding-left: 0;
+  }
+
+  #profile {
+    position: static;
+    width: 100%;
+  }
+
+  #profile .outer .mynameis {
+    margin: 0 auto;
+    width: 150px;
+  }
+
+  #profile .outer .links {
+    margin: 0 auto;
+    width: 150px;
+  }
 }
