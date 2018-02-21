@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>rokuyama.daiki</title>
   <!-- Bootstrap -->
   <link href="/packages/admin/AdminLTE/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -15,14 +16,14 @@
     <!-- header section -->
     @include('partials.header')
 
-    <div id="main">
+    <div id="main" class="column">
 
-      <div id="main-right" class="column">
+      <div id="main-right">
         @yield('content')
       </div>
 
       <!-- profile section -->
-      <div id="profile" class="column">
+      <div id="profile">
         @include('partials.profile')
       </div>
 
