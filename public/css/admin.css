@@ -22,3 +22,19 @@ div.tagsinput span.tag {
 div.tagsinput span.tag a {
   color: #9d9d9d;
 }
+
+.navbar-header {
+  float: none;
+}
+
+#editor {
+  min-height: 300px;
+}
+
+#preview {
+  min-height: 300px;
+  background-color: #fff;
+  padding: 6px 12px;
+}
+
+

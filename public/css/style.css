@@ -1,5 +1,5 @@
 .index {
-  position:relative;
+  position: relative;
   padding-top: 89px;
   /* background-color: #61b1c8; */
 }
@@ -8,9 +8,9 @@ header {
   margin: 0px 30px;
   padding: 25px 0px;
   position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   border-bottom: 1px solid #edf0f4;
   background-color: white;
   z-index: 1;
@@ -63,12 +63,12 @@ header h1 {
   margin: 0 auto 25px;
   height: 150px;
   width: 150px;
-} 
+}
 
 #profile .outer .picture img {
   height: 150px;
   width: 150px;
-} 
+}
 
 #profile .outer .mynameis {
   margin: 0 25px;
@@ -105,16 +105,16 @@ header h1 {
   max-height: 356px;
 }
 
-#main-right .row .col-md-3 img{
+#main-right .row .col-md-3 img {
   height: 230px;
   width: 100%;
 }
 
-#main-right .row .col-md-3 .button{
+#main-right .row .col-md-3 .button {
   padding: 15px 15px 0;
 }
 
-#main-right .row .col-md-3 h2{
+#main-right .row .col-md-3 h2 {
   font-size: 16px;
   font-weight: 700;
   height: 65px;
@@ -162,7 +162,7 @@ header h1 {
   padding: 0 18px;
 }
 
-#article-header h1{
+#article-header h1 {
   font-size: 24px;
   font-weight: 700;
   margin: 22px 0;
