@@ -42,10 +42,9 @@
   <script src="{{ asset ("/lib/marked/js/marked.min.js") }}"></script>
   <script src="{{ asset ("/lib/highlight/js/highlight.pack.js") }}"></script>
   <script>
-    $(function() {
-      marked.setOptions({
-        langPrefix: ""
-      });
+    marked.setOptions({
+      langPrefix: ""
+    });
 
     <?php
       $content = $post->content;
@@ -57,13 +56,52 @@
       $content = str_replace($order_quotation, $replace_quotation, $content);
     ?>
 
-      var html = marked("<?php echo $content ?>");
-      $("#article-content").html(html);
+    var html = marked("<?php echo $content ?>");
+    var mapRe = /\{\{\{(.+?), (.+?)\}\}\}/g;
+    var mapArray;
+    var mapHash;
+    var pointArray = [];
+    var i = 0;
 
-      $("#article-content pre code").each(function(i, e) {
-        hljs.highlightBlock(e, e.className);
-      });
+    while ((mapArray = mapRe.exec(html)) !== null)
+    {
+      // add latitude and lngitude to mapHash
+      mapHash = {lat: mapArray[1], lng: mapArray[2]};
+      // add hashMap to pointArray
+      pointArray.push(mapHash);
+      // compiled from latlng to div element
+      html = html.replace(mapArray[0], `<div id="map${i}" style="height:400px;"></div>`)
+      i++;
+    }
+
+    // add compiled source to html element
+    $("#article-content").html(html);
+    $("#article-content pre code").each(function(i, e) {
+      hljs.highlightBlock(e, e.className);
     });
+
+    // create map and marker
+    function initMap() {
+      for (var i = 0; i < pointArray.length; i++) {
+        var lat = parseFloat(pointArray[i]['lat']);
+        console.log(lat);
+        var lng = parseFloat(pointArray[i]['lng']);
+        console.log(lng);
+        var latlng = {lat: lat, lng: lng};
+        var map = new google.maps.Map(document.getElementById(`map${i}`), {
+          zoom: 15,
+          center: latlng
+        });
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map
+        });
+      }
+    }
+
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU&callback=initMap">
   </script>
 </body>
 </html>

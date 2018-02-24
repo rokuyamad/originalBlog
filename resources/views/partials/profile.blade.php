@@ -18,7 +18,7 @@
         <a href="https://github.com/daikirokuyama" style="color:black"><i class="fab fa-github-square"></i>Github</a>
       </li>
       <li>
-        <a href="mailto:dr19950228@gmail.com" style="color:black"><i class="fas fa-envelope"></i>Mail</a>
+        <a href="mailto:dr19950228@gmail.com" style="color:white"><i class="fas fa-envelope"></i>Mail</a>
       </li>
     </ul>
   </div>

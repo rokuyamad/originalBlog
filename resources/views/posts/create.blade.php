@@ -84,7 +84,6 @@
         });
 
         $('#editor').keyup(function() {
-          console.log('hoge');
           var html = marked($(this).val());
           $('#preview').html(html);
 
