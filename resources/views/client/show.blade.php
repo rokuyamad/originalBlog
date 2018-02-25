@@ -82,11 +82,10 @@
 
     // create map and marker
     function initMap() {
+      console.log(html);
       for (var i = 0; i < pointArray.length; i++) {
         var lat = parseFloat(pointArray[i]['lat']);
-        console.log(lat);
         var lng = parseFloat(pointArray[i]['lng']);
-        console.log(lng);
         var latlng = {lat: lat, lng: lng};
         var map = new google.maps.Map(document.getElementById(`map${i}`), {
           zoom: 15,
@@ -98,7 +97,6 @@
         });
       }
     }
-
   </script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU&callback=initMap">
