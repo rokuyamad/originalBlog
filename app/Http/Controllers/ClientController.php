@@ -11,14 +11,13 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('id', 'ASC')->paginate(8);
+        $posts = Post::orderBy('id', 'DESC')->paginate(8);
         return view('client.index')->with('posts', $posts);
     }
 
     public function show($id)
     {
         $post = Post::find($id);
-        // dd($post->content);
         return view('client.show')->with(['post'=> $post]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Post;
 use App\Category;
 use App\Tag;
+use App\postImage;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -150,6 +151,20 @@ class PostsController extends Controller
         $post->tags()->sync($tag_ids);
 
         return redirect("admin/posts");
+    }
+
+    /**
+     * uploadImage action.
+     *
+     * @return "json"
+     */
+    public function uploadImage(Request $request)
+    {
+        $image = $request->file('image');
+        $fileName = $image->getClientOriginalName();
+        $image->move(base_path() . '/public/image/postImages', $fileName);
+
+        return response()->json(['fileName' => $fileName]);
     }
 
     /**
