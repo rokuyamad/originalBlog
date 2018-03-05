@@ -15,6 +15,7 @@ li {
   color: white;
 }
 
+/* start index.blade.php */
 .index {
   position: relative;
   padding-top: 89px;
@@ -148,8 +149,9 @@ header h1 {
   text-align: center;
   clear: both;
 }
+/* end index.blade.php */
 
-/* show.blade.php */
+/* start show.blade.php */
 .article {
   background-color: #333951;
 }
@@ -188,6 +190,17 @@ section {
   color: #adaaa5;
 }
 
+pre {
+  background-color: #002b36;
+  border: none;
+}
+
+#article-content img {
+  width: 100%;
+}
+/* end show.blade.php */
+
+/* start responsive design */
 @media screen and (max-width: 480px) {
   header {
     text-align: center;
@@ -224,3 +237,4 @@ section {
     width: 150px;
   }
 }
+/* end responsive design */
