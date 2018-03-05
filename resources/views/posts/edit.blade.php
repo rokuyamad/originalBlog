@@ -52,7 +52,7 @@
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div id="admin-article" class="form-group">
-                {!! Form::textarea('content', $post->content, ['id' => 'editor', 'class' => 'form-control switch eswitch', 'placeholder' => '記事内容を入力して下さい']) !!}
+                {!! Form::textarea('content', $post->content, ['id' => 'editor', 'class' => 'form-control switch eswitch', 'ondragover' => 'dragover(event)', 'ondrop' => 'drop(event)']) !!}
                 <div id="preview" class="switch pswitch" style="display:none"></div>
               </div>
             </div><!-- /.container-fluid -->

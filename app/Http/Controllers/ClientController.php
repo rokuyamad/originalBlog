@@ -18,7 +18,6 @@ class ClientController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        // dd($post->content);
         return view('client.show')->with(['post'=> $post]);
     }
 }

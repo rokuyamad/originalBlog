@@ -27,3 +27,51 @@ $(document).on('change', ':file', function() {
     };
   }
 });
+
+function dragover(e) {
+  e.preventDefault();
+}
+
+function drop(e) {
+  e.preventDefault();
+  var files = e.dataTransfer.files;
+  for (var i = 0; i < files.length; i++) {
+    if (!files[i] || files[i].type.indexOf('image/') < 0) {
+      continue;
+    }
+
+    FileUpload(files[i]);
+  }
+}
+
+function FileUpload(fd) {
+  var formData = new FormData();
+  formData.append('image', fd);
+  $.ajax({
+    async: true,
+    type: 'post',
+    contentType: false,
+    processData: false,
+    url: '/admin/posts/uploadImage',
+    data: formData,
+    dataType: 'json',
+  })
+    .done(function(responsData) {
+      console.log(responsData);
+
+      var textarea = document.querySelector('#editor');
+      var sentence = textarea.value;
+      var len = sentence.length;
+      var pos = textarea.selectionStart;
+
+      var before = sentence.substr(0, pos);
+      var word = `![sample](/image/postImages/${responsData['fileName']})`;
+      var after = sentence.substr(pos, len);
+
+      sentence = before + word + after;
+      textarea.value = sentence;
+    })
+    .fail(function(error) {
+      console.log(error);
+    });
+}
