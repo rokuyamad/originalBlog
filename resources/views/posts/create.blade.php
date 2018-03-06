@@ -28,8 +28,9 @@
                 </div>
 
                 <div class="form-group col-md-4">
+                  {!! Form::label('image') !!}
                   <div class="imagePreview"></div>
-                  <div class="input-group" style="margin-bottom:15px">
+                  <div class="input-group">
                     <label class="input-group-btn">
                       <span class="btn btn-primary">
                         Choose top image{!! Form::file('image', ['style' => 'display:none']) !!}
@@ -39,16 +40,21 @@
                   </div>
                 </div>
 
-                <div class="form-group col-md-8">
-                  <div class="form-group">
-                    {!! Form::label('category') !!}
-                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+                <div class="form-group col-md-4" style="height:228px;">
+                  {!! Form::label('category') !!}
+                  <div style="height:203px;border:1px solid #CCC;padding:15px;">
+                    @for ($i = 0; $i < $categories->count(); $i++)
+                      <div style="height:57px;display:table;">
+                        {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio02-input', 'id' => "radio02-0{$i}"])}}
+                        <label for="radio02-0{{$i}}" style="display:table-cell;vertical-align:middle;">{{ $categories[$i]->category_name }}</label> <br>
+                      </div>
+                    @endfor
                   </div>
+                </div>
 
-                  <div class="form-group">
-                    {!! Form::label('tags') !!}
-                    {!! Form::text('tags', '', ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
-                  </div>
+                <div class="form-group col-md-4" style="height:228px;">
+                  {!! Form::label('tags') !!}
+                  {!! Form::text('tags', '', ['id' => 'tags', 'class' => 'form-control', 'placeholder' => 'タグを入力して下さい。']) !!}
                 </div>
 
                 <div class="form-group col-md-12">
@@ -82,8 +88,8 @@
 
     <script>
       $('#tags').tagsInput({
-        height: '90px',
-        width: '730px',
+        height: '203px',
+        width: '100%'
       });
 
       $('.bswitch').on('click', function() {
