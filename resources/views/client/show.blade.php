@@ -32,7 +32,7 @@
       </div>
 
       {{-- <section id="article-content">{{ $post->content }}</section> --}}
-      <section id="article-content"></section>
+      <section class="article-content"></section>
     </div>
   </div>
 
@@ -76,8 +76,8 @@
     }
 
     // add compiled source to html element
-    $("#article-content").html(html);
-    $("#article-content pre code").each(function(i, e) {
+    $(".article-content").html(html);
+    $(".article-content pre code").each(function(i, e) {
       hljs.highlightBlock(e, e.className);
     });
 

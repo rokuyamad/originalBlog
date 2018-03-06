@@ -14,10 +14,14 @@
   margin: 22px 0;
 }
 
-section {
+.article .article-content {
   max-width: 640px;
   margin: 16px auto 36px;
   padding: 0 18px;
+}
+
+.article-content img {
+  width: 100%;
 }
 
 .data {
@@ -29,8 +33,4 @@ section {
 pre {
   background-color: #002b36;
   border: none;
-}
-
-#article-content img {
-  width: 100%;
 }

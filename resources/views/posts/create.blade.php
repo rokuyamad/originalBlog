@@ -62,7 +62,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div id="admin-article" class="form-group">
                       {!! Form::textarea('content', '', ['id' => 'editor', 'class' => 'form-control switch eswitch', 'ondragover' => 'dragover(event)', 'ondrop' => 'drop(event)']) !!}
-                      <div id="preview" class="switch pswitch" style="display:none"></div>
+                      <div id="preview" class="switch pswitch article-content" style="display:none"></div>
                     </div>
                   </div><!-- /.container-fluid -->
                  </nav>
