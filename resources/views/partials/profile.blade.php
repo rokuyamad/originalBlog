@@ -1,7 +1,7 @@
 <!-- profile section -->
 <div class="outer">
   <div class="picture">
-    <img src="{{ asset("image/avatars/sample.png") }}" alt="">
+    <img src="{{ asset("image/avatars/IMG_0671.jpg") }}" alt="">
   </div>
   <div class="mynameis">
     <p>DAIKI ROKUYAMA</p>

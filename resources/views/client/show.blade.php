@@ -83,7 +83,6 @@
 
     // create map and marker
     function initMap() {
-      console.log(html);
       for (var i = 0; i < pointArray.length; i++) {
         var lat = parseFloat(pointArray[i]['lat']);
         var lng = parseFloat(pointArray[i]['lng']);

@@ -10,12 +10,12 @@ return [
     /*
      * Logo in admin panel header.
      */
-    'logo'      => '<b>Laravel</b> admin',
+    'logo'      => '<b>OVERSEAS</b>',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>Ov</b>',
 
     /*
      * Laravel-admin url prefix.
@@ -30,7 +30,7 @@ return [
     /*
      * Laravel-admin html title.
      */
-    'title'  => 'Admin',
+    'title'  => 'Management portal',
 
     /*
      * Laravel-admin auth setting.

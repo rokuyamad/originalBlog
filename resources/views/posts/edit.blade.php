@@ -90,6 +90,7 @@
 
     </section>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU"></script>
     <script>
       $('#tags').tagsInput({
         height: '203px',
@@ -107,20 +108,78 @@
         });
 
         // only edit.blade.php
-        var preHtml = marked($('#editor').val());
-        $('#preview').html(preHtml);
+        var html = marked($('#editor').val());
+        $('#preview').html(html);
         $('#preview pre code').each(function(i, e) {
           hljs.highlightBlock(e, e.className);
         });
 
-        $('#editor').keyup(function() {
-          var html = marked($(this).val());
-          $('#preview').html(html);
+        var mapRe = /\{\{\{(.+?), (.+?)\}\}\}/g;
+        var mapArray;
+        var mapHash;
+        var pointArray = [];
+        var i = 0;
 
-          $('#preview pre code').each(function(i, e) {
-            hljs.highlightBlock(e, e.className);
-          });
+        while ((mapArray = mapRe.exec(html)) !== null)
+        {
+          // add latitude and lngitude to mapHash
+          mapHash = {lat: mapArray[1], lng: mapArray[2]};
+          // add hashMap to pointArray
+          pointArray.push(mapHash);
+          // compiled from latlng to div element
+          html = html.replace(mapArray[0], `<div id="map${i}" style="height:400px;"><\/div>`)
+          i++;
+        }
+
+        $('#preview').html(html);
+        $('#preview pre code').each(function(i, e) {
+          hljs.highlightBlock(e, e.className);
         });
+
+        initMap(pointArray);
       });
+
+      $('#editor').keyup(function() {
+        var html = marked($(this).val());
+        var mapRe = /\{\{\{(.+?), (.+?)\}\}\}/g;
+        var mapArray;
+        var mapHash;
+        var pointArray = [];
+        var i = 0;
+
+        while ((mapArray = mapRe.exec(html)) !== null)
+        {
+          // add latitude and lngitude to mapHash
+          mapHash = {lat: mapArray[1], lng: mapArray[2]};
+          // add hashMap to pointArray
+          pointArray.push(mapHash);
+          // compiled from latlng to div element
+          html = html.replace(mapArray[0], `<div id="map${i}" style="height:400px;"><\/div>`)
+          i++;
+        }
+
+        $('#preview').html(html);
+        $('#preview pre code').each(function(i, e) {
+          hljs.highlightBlock(e, e.className);
+        });
+
+        initMap(pointArray);
+      });
+
+      function initMap(pointArray) {
+        for (var i = 0; i < pointArray.length; i++) {
+          var lat = parseFloat(pointArray[i]['lat']);
+          var lng = parseFloat(pointArray[i]['lng']);
+          var latlng = {lat: lat, lng: lng};
+          var map = new google.maps.Map(document.getElementById(`map${i}`), {
+            zoom: 15,
+            center: latlng
+          });
+          var marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+          });
+        }
+      }
     </script>
 @endsection
