@@ -1,0 +1,36 @@
+/***
+ * stylesheet for markdown
+ * show.blade.php and edit.blade.php
+ */
+#article-header {
+  max-width: 640px;
+  margin: 14px auto 18px;
+  padding: 0 18px;
+}
+
+#article-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 22px 0;
+}
+
+section {
+  max-width: 640px;
+  margin: 16px auto 36px;
+  padding: 0 18px;
+}
+
+.data {
+  font-size: 12px;
+  font-weight: 600;
+  color: #adaaa5;
+}
+
+pre {
+  background-color: #002b36;
+  border: none;
+}
+
+#article-content img {
+  width: 100%;
+}

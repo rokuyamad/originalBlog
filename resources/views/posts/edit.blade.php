@@ -81,20 +81,24 @@
     </section>
 
     <script>
-      $(document).ready(function() {
-        $('#tags').tagsInput({
-          height: '90px',
-          width: '730px',
-        });
+      $('#tags').tagsInput({
+        height: '90px',
+        width: '730px',
+      });
 
-        $('.bswitch').on('click', function() {
-          $('#admin-article .switch').hide();
-          $('.' + this.id).show();
-        });
+      $('.bswitch').on('click', function() {
+        $('#admin-article .switch').hide();
+        $('.' + this.id).show();
+      });
 
+      $(function() {
         marked.setOptions({
           langPrefix: '',
         });
+
+        // only edit.blade.php
+        var preHtml = marked($('#editor').val());
+        $('#preview').html(preHtml);
 
         $('#editor').keyup(function() {
           var html = marked($(this).val());
