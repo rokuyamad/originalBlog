@@ -36,38 +36,3 @@ div.tagsinput span.tag a {
   background-color: #fff;
   padding: 6px 12px;
 }
-
-/*css radio02*/
-.radio02-input {
-  display: none;
-}
-.radio02-input + label {
-  padding-left: 20px;
-  position: relative;
-  margin-right: 20px;
-}
-.radio02-input + label::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 21px;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #999;
-  border-radius: 50%;
-}
-.radio02-input:checked + label {
-  color: #009a9a;
-}
-.radio02-input:checked + label::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 23px;
-  left: 2px;
-  width: 11px;
-  height: 11px;
-  background: #009a9a;
-  border-radius: 50%;
-}
