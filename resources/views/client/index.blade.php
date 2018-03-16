@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="parent-article">
+  <div class="parent-article animsition">
     @foreach ($posts as $post)
       <article>
         <a href="/posts/{{ $post->id }}">

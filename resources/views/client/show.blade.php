@@ -8,7 +8,7 @@
   <!-- Font Awesome -->
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset("/lib/highlight/style/solarized-dark.css") }}">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/markdown.css") }}">
 </head>
 <body>
@@ -83,7 +83,6 @@
 
     // create map and marker
     function initMap() {
-      console.log(html);
       for (var i = 0; i < pointArray.length; i++) {
         var lat = parseFloat(pointArray[i]['lat']);
         var lng = parseFloat(pointArray[i]['lng']);

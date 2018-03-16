@@ -70,6 +70,8 @@ function FileUpload(fd) {
 
       sentence = before + word + after;
       textarea.value = sentence;
+      var html = marked(sentence);
+      $('#preview').html(html);
     })
     .fail(function(error) {
       console.log(error);

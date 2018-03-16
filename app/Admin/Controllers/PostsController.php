@@ -50,7 +50,8 @@ class PostsController extends Controller
         $header = "Edit Post";
         $description = "";
         $post = Post::find($id);
-        $categories = Category::all()->pluck('category_name', 'id');
+        // $categories = Category::all()->pluck('category_name', 'id');
+        $categories = Category::all();
         $tags = $post->tags->pluck('tag_name')->toArray();
         $tags_comma_separated = implode(",", $tags);
 
@@ -73,7 +74,8 @@ class PostsController extends Controller
         $header = "New Post";
         $description = "";
         $post = new Post();
-        $categories = Category::all()->pluck('category_name', 'id');
+        // $categories = Category::all()->pluck('category_name', 'id');
+        $categories = Category::all();
 
         return view('posts.create')->with([
             'header'      => $header,
