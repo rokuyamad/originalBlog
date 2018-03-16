@@ -1,16 +1,15 @@
 @extends('admin::index')
 
-@section('stylesheet')
+@section('addStyles')
   <link rel="stylesheet" href="{{ asset("css/radio.css") }}">
-@endsection
+@stop
 
 @section('content')
   <section class="content-header">
-      <h1>
-          {{ $header or trans('admin::lang.title') }}
-          <small>{{ $description or trans('admin::lang.description') }}</small>
-      </h1>
-
+    <h1>
+        {{ $header or trans('admin::lang.title') }}
+        <small>{{ $description or trans('admin::lang.description') }}</small>
+    </h1>
   </section>
 
   <section class="content">
@@ -46,17 +45,15 @@
 
               <div class="form-group col-md-4" style="height:228px;">
                 {!! Form::label('category') !!}
-                <div class="category_body">
-                  <div class="category_wrap" style="height:203px;border:1px solid #CCC;">
-                    <div class="RadioBtnsWrap">
-                      @for ($i = 0; $i < $categories->count(); $i++)
-                        <!-- <div style="height:57px;display:table;"> -->
-                          {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'Radio', 'id' => "radio{$i}"])}}
-                          <label for="radio{{$i}}" style="display:table-cell;vertical-align:middle;">{{ $categories[$i]->category_name }}</label> <br>
-                        <!-- </div> -->
-                      @endfor
-                    </div>
-                  </div>
+                <div class="category-container" style="height:203px;">
+                  <ul class="category-list">
+                  @for ($i = 0; $i < $categories->count(); $i++)
+                    <li class="list__item">
+                      {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio-btn', 'id' => "radio{$i}"])}}
+                      <label for="radio{{$i}}" class="label">{{ $categories[$i]->category_name }}</label> <br>
+                    </li>
+                  @endfor
+                  </ul>
                 </div>
               </div>
 
@@ -93,6 +90,10 @@
     </div>
 
   </section>
+
+  @section('addScripts')
+    <script src="{{ asset ("/js/admin-script.js") }}"></script>
+  @endsection
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU"></script>
   <script>

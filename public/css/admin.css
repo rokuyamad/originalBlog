@@ -28,11 +28,15 @@ div.tagsinput span.tag a {
 }
 
 #editor {
-  min-height: 300px;
 }
 
 #preview {
-  min-height: 300px;
+  min-height: 500px;
   background-color: #fff;
   padding: 6px 12px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 500px;
 }
