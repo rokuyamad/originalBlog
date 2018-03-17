@@ -67,8 +67,8 @@
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
-                    <a id="eswitch" class="bswitch navbar-brand">Editor</a>
-                    <a id="pswitch" class="bswitch navbar-brand">Preview</a>
+                    <a id="eswitch" class="bswitch navbar-brand" href="javascrpt:void(0)">Editor</a>
+                    <a id="pswitch" class="bswitch navbar-brand" href="javascrpt:void(0)">Preview</a>
                   </div>
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div id="admin-article" class="form-group">
