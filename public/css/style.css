@@ -1,6 +1,6 @@
 body {
-  background-color: #333951;
-  color: white;
+  background-color: #344b66;
+  color: #000;
 }
 
 h1,
@@ -12,28 +12,34 @@ h6,
 p,
 a,
 li {
-  color: white;
+  color: #000;
+  font-family: 'メイリオ', sans-serif;
 }
 
 /* start index.blade.php */
 .index {
   position: relative;
-  padding-top: 89px;
+  padding-top: 90px;
 }
 
 header {
-  padding: 25px 30px;
+  padding: 25px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   border-bottom: 1px solid #edf0f4;
-  background-color: #333951;
+  background-image: url('/image/indexImage/header-img.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
 header h1 {
   margin: 0;
+  color: #fff;
+  font-family: cursive;
 }
 
 .aside {
@@ -82,6 +88,7 @@ header h1 {
 #profile .outer .mynameis {
   margin: 0 25px;
   width: 150px;
+  font-weight: 700;
 }
 
 #profile .outer .links {
@@ -110,7 +117,12 @@ header h1 {
 #main-right .parent-article article {
   width: 25%;
   padding: 0;
-  background-color: #676c7e;
+  font-weight: 700;
+  background-color: #a7bbd1;
+}
+
+#main-right .parent-article article h2 {
+  font-weight: 700;
 }
 
 #main-right .parent-article article .thumbnail-wrap {
@@ -149,26 +161,21 @@ header h1 {
   text-align: center;
   clear: both;
 }
-/* end index.blade.php */
-
-/* start show.blade.php */
-.article {
-  background-color: #333951;
-}
-
-.eyecatch {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.eyecatch img {
-  width: 100%;
-  height: 500px;
-}
-/* end show.blade.php */
 
 /* start responsive design */
-@media screen and (max-width: 480px) {
+@media (min-width: 992px) and (max-width: 1119px) {
+  #main-right .parent-article article {
+    width: 33.3%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #main-right .parent-article article {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
   header {
     text-align: center;
   }

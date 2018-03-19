@@ -12,8 +12,12 @@
   <link rel="stylesheet" href="{{ asset("/css/markdown.css") }}">
 </head>
 <body>
+  <div class="index">
 
-  <div class="main">
+    <!-- header section -->
+    @include('partials.header')
+
+    <!-- .articel section -->
     <div class="article">
 
       <div class="eyecatch-cover">
@@ -33,7 +37,8 @@
 
       {{-- <section id="article-content">{{ $post->content }}</section> --}}
       <section class="article-content"></section>
-    </div>
+    </div><!-- end .articel section -->
+
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
