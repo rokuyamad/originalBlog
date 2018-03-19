@@ -2,6 +2,17 @@
  * stylesheet for markdown
  * show.blade.php and edit.blade.php
  */
+
+.eyecatch {
+  margin: 0 auto;
+}
+
+.eyecatch img {
+  width: 100%;
+  /* I'll set 500px image height */
+  height: auto;
+}
+/* end show.blade.php */
 #article-header {
   max-width: 640px;
   margin: 14px auto 18px;
@@ -12,6 +23,13 @@
   font-size: 24px;
   font-weight: 700;
   margin: 22px 0;
+}
+
+.article {
+  margin: 0 auto;
+  width: 1000px;
+  height: 100%;
+  background-color: #a7bbd1;
 }
 
 .article .article-content {
