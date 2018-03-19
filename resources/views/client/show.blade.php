@@ -21,17 +21,21 @@
     <div class="article">
 
       <div class="eyecatch-cover">
-        <div class="eyecatch">
+        <div class="eyecatch frame">
           <img src="{{ asset("/image/topImages/{$post->top_image}") }}" alt="">
         </div>
       </div>
 
       <div id="article-header">
         <h1>{{ $post->title }}</h1>
+        <div class=article-tag>
+          <span style="font-weight:700;">Tags :</span>
+          @foreach ($post->tags as $tag)
+            <span style="padding-left:5px;">{{ $tag->tag_name }}</span>
+          @endforeach
+        </div>
         <div class="date">
-          {{ $post->created_at->format('Y.m.d') }} [
-          <a href="/">{{ $post->category->category_name }}</a>
-          ]
+          {{ $post->created_at->format('Y.m.d') }}
         </div>
       </div>
 
