@@ -13,4 +13,5 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
   mix.sass('radio.scss');
+  mix.sass('h1.scss');
 });

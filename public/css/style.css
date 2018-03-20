@@ -13,7 +13,9 @@ p,
 a,
 li {
   color: #000;
-  font-family: 'メイリオ', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3',
+    'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic,
+    'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
 /* start index.blade.php */
@@ -85,12 +87,6 @@ header h1 {
   width: 150px;
 }
 
-#profile .outer .mynameis {
-  margin: 0 25px;
-  width: 150px;
-  font-weight: 700;
-}
-
 #profile .outer .links {
   margin: 0 25px;
   width: 150px;
@@ -117,8 +113,8 @@ header h1 {
 #main-right .parent-article article {
   width: 25%;
   padding: 0;
-  font-weight: 700;
-  background-color: #a7bbd1;
+  font-weight: 900;
+  background-color: #BCC6D1;
 }
 
 #main-right .parent-article article h2 {
@@ -199,16 +195,37 @@ header h1 {
   #profile {
     position: static;
     width: 100%;
+    padding: 0;
   }
 
-  #profile .outer .mynameis {
+  #profile .outer {
+    width: 300px;
     margin: 0 auto;
-    width: 150px;
+  }
+
+  #profile .outer .picture {
+    float: left;
+    /* width: 100%; */
+    height: auto;
+    margin: 0;
   }
 
   #profile .outer .links {
-    margin: 0 auto;
+    float: left;
+    padding-left: 50px;
+    margin: 0;
     width: 150px;
+  }
+
+  #profile .outer .links ul li {
+    list-style: none;
+    line-height: 40px;
+  }
+
+  .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }
 /* end responsive design */

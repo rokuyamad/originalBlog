@@ -3,49 +3,134 @@
  * show.blade.php and edit.blade.php
  */
 
+body {
+  background-color: #344b66;
+}
+
+#preview {
+  background-color: #344b66;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  color: #cfdae6;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3',
+    'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic,
+    'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
 .eyecatch {
+  width: 800px;
   margin: 0 auto;
 }
 
 .eyecatch img {
+  margin: 0 auto;
   width: 100%;
-  /* I'll set 500px image height */
-  height: auto;
+  /* I'll set 420px image height */
+  height: 420px;
 }
-/* end show.blade.php */
+
 #article-header {
-  max-width: 640px;
-  margin: 14px auto 18px;
+  width: 100%;
+  margin: 40px auto 0;
   padding: 0 18px;
 }
 
 #article-header h1 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  margin: 22px 0;
 }
 
 .article {
-  margin: 0 auto;
-  width: 1000px;
+  margin: 50px auto;
+  width: 800px;
   height: 100%;
-  background-color: #a7bbd1;
 }
 
 .article .article-content {
-  max-width: 640px;
-  margin: 16px auto 36px;
+  width: 100%;
+  margin: 18px auto;
   padding: 0 18px;
 }
 
+.article-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0.25em 0 0.25em 0.75em;
+  margin: 40px 0 20px;
+  border-left: 10px solid #6bced1;
+}
+
+.article-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0.25em 0 0.25em 0.75em;
+  margin: 32px 0 2px;
+  background-color: #27394d;
+}
+
+.article-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  padding: 0.25em 0 0.5em 0.75em;
+  margin: 32px 0 2px;
+  border-left: 6px solid #ccc;
+}
+
+.article-content h4::before {
+  position: absolute;
+  left: -6px;
+  bottom: 0;
+  content: '';
+  width: 6px;
+  height: 50%;
+  background-color: #d16e6b;
+}
+
+.article-content h4::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.article-content p {
+  font-size: 16px;
+  line-height: 2.5rem;
+  margin: 18px 0;
+}
 .article-content img {
   width: 100%;
 }
 
-.data {
+.header-description {
+  padding-left: 28px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #d14;
+}
+
+.article-tag {
+  font-size: 14px;
+  color: #adaaa5;
+  float: left;
+}
+
+.date {
+  float: right;
   font-size: 12px;
   font-weight: 600;
-  color: #adaaa5;
+  color: #fff;
 }
 
 .article-content pre {
