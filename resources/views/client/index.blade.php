@@ -6,7 +6,12 @@
     @foreach ($posts as $post)
       <article>
         <div class="thumbnail-wrap adjust-box">
-          <div class="thumbnail-image" style="background-image:url({{ asset("/image/topImages/{$post->top_image}") }}")></div>
+          <a href="/posts/{{ $post->id }}">
+            <div class="thumbnail-image" style="background-image:url({{ asset("/image/topImages/{$post->top_image}") }}")></div>
+            <div class="mask">
+              <div class="caption">READ MORE ...</div>
+            </div>
+          </a>
         </div>
 
         <div class="button">
