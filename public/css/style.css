@@ -143,6 +143,11 @@ header h1 {
 #main-right .parent-article article .button {
   padding: 16px 16px 0;
 }
+
+#main-right .parent-article article .thumbnail-title a {
+  color: #000;
+}
+
 #main-right .parent-article article h2 {
   margin: 0;
   padding: 16px;
