@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset("/lib/highlight/style/solarized-dark.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/markdown.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/h1.css") }}">
 </head>
 <body>
   <div class="index">
@@ -28,18 +29,19 @@
 
       <div id="article-header">
         <h1>{{ $post->title }}</h1>
-        <div class=article-tag>
-          <span style="font-weight:700;">Tags :</span>
-          @foreach ($post->tags as $tag)
-            <span style="padding-left:5px;">{{ $tag->tag_name }}</span>
-          @endforeach
-        </div>
-        <div class="date">
-          {{ $post->created_at->format('Y.m.d') }}
+        <div class="header-description clearfix">
+          <div class=article-tag>
+            <span style="font-weight:700;color:#fff;">Tags :</span>
+            @foreach ($post->tags as $tag)
+              <span style="padding-left:5px;">{{ $tag->tag_name }}</span>
+            @endforeach
+          </div>
+          <div class="date">
+            {{ $post->created_at->format('Y.m.d') }}
+          </div>
         </div>
       </div>
 
-      {{-- <section id="article-content">{{ $post->content }}</section> --}}
       <section class="article-content"></section>
     </div><!-- end .articel section -->
 
@@ -67,6 +69,7 @@
     ?>
 
     var html = marked("<?php echo $content ?>");
+    console.log(html);
     var mapRe = /\{\{\{(.+?), (.+?)\}\}\}/g;
     var mapArray;
     var mapHash;
