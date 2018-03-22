@@ -25,6 +25,16 @@
           <div class="container">
             {!! Form::model($post, ['url' => "/admin/posts", 'files' => true]) !!}
 
+              @if (count($errors) > 0)
+                  <div class="alert alert-danger alert-dismissable">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
               <div class="form-group col-md-12">
                 {!! Form::label('title', 'Title') !!}
                 {!! Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'タイトルを入力してください。']) !!}

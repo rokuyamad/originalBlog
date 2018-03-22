@@ -92,6 +92,11 @@ class PostsController extends Controller
      */
     public function update($id, Request $request)
     {
+        $this->validate($request, [
+          'title'       => 'required|max:40',
+          'category_id' => 'required',
+        ]);
+
         $post = Post::find($id);
 
         $post->update([
@@ -132,7 +137,7 @@ class PostsController extends Controller
     {
         $this->validate($request, [
           'title'       => 'required|max:40',
-          // 'top_image'   => 'required|image',
+          'image'       => 'required|image',
           'category_id' => 'required',
         ]);
 
