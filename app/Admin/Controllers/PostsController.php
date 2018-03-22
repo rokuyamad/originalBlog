@@ -93,7 +93,7 @@ class PostsController extends Controller
     public function update($id, Request $request)
     {
         $this->validate($request, [
-          'title'       => 'required|max:40',
+          'title'       => 'required|max:80',
           'category_id' => 'required',
         ]);
 
@@ -108,7 +108,8 @@ class PostsController extends Controller
 
         if ($request['image']) {
             $fileName = $request['image']->getClientOriginalName();
-            Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
+            Image::make($request['image'])->fit(600, 400)->save(public_path() . '/image/thumbImages/' . $fileName);
+            Image::make($request['image'])->fit(800, 450)->save(public_path() . '/image/topImages/' . $fileName);
 
             $post->update([
             'top_image'   => $fileName,
@@ -136,13 +137,14 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'title'       => 'required|max:40',
+          'title'       => 'required|max:80',
           'image'       => 'required|image',
           'category_id' => 'required',
         ]);
 
         $fileName = $request['image']->getClientOriginalName();
-        Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
+        Image::make($request['image'])->fit(600, 400)->save(public_path() . '/image/thumbImages/' . $fileName);
+        Image::make($request['image'])->fit(800, 450)->save(public_path() . '/image/topImages/' . $fileName);
 
         $post = Post::create([
             'title'       => $request->title,
@@ -173,9 +175,9 @@ class PostsController extends Controller
      */
     public function uploadImage(Request $request)
     {
-        $image = $request->file('image');
+        $image = $request['image'];
         $fileName = $image->getClientOriginalName();
-        $image->move(base_path() . '/public/image/postImages', $fileName);
+        Image::make($image)->fit(760, 427.5)->move(base_path() . '/public/image/postImages', $fileName);
 
         return response()->json(['fileName' => $fileName]);
     }

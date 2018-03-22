@@ -5,9 +5,10 @@
   <div class="parent-article animsition">
     @foreach ($posts as $post)
       <article>
-        <div class="thumbnail-wrap adjust-box">
+        <div class="thumbnail-wrap">
           <a href="/posts/{{ $post->id }}">
-            <div class="thumbnail-image" style="background-image:url({{ asset("/image/topImages/{$post->top_image}") }}")></div>
+            {{-- <div class="thumbnail-image" style="background-image:url({{ asset("/image/thumbImages/{$post->top_image}") }}")></div> --}}
+            <img class="thumbnail-image" src="{{ asset("/image/thumbImages/{$post->top_image}") }}" alt="">
             <div class="mask">
               <div class="caption">READ MORE ...</div>
             </div>
