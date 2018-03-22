@@ -1,0 +1,58 @@
+#article-header h1 {
+  position: relative;
+  padding: 10px 0 2px 28px;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    margin: auto;
+  }
+  &:before {
+    width: 12px;
+    height: 12px;
+    top: 0;
+    left: 14px;
+    background: #d14;
+    transform: rotate(50deg);
+  }
+  &:after {
+    width: 8px;
+    height: 8px;
+    top: 18px;
+    left: 6px;
+    background: #d14;
+    transform: rotate(20deg);
+  }
+}
+
+#preview {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    color: #cfdae6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3',
+      'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic,
+      'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  }
+}
+
+.article {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    color: #cfdae6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3',
+      'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic,
+      'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  }
+}

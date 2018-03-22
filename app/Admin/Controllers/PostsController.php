@@ -130,6 +130,12 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+          'title'       => 'required|max:40',
+          // 'top_image'   => 'required|image',
+          'category_id' => 'required',
+        ]);
+
         $fileName = $request['image']->getClientOriginalName();
         Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
 
