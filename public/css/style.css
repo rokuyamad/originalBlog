@@ -72,6 +72,7 @@ header h1 {
 
 #main-right {
   width: 100%;
+  height: 90vh;
   padding: 40px 30px;
   border-left: 1px solid #edf0f4;
 }
