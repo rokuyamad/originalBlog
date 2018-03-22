@@ -11,20 +11,6 @@ body {
   background-color: #344b66;
 }
 
-/* h1, */
-/* h2, */
-/* h3, */
-/* h4, */
-/* h5, */
-/* h6, */
-/* p, */
-/* li { */
-/*   color: #cfdae6; */
-/*   font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', */
-/*     'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, */
-/*     'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; */
-/* } */
-
 .eyecatch {
   width: 800px;
   margin: 0 auto;
@@ -33,8 +19,6 @@ body {
 .eyecatch img {
   margin: 0 auto;
   width: 100%;
-  /* I'll set 500px image height */
-  height: 500px;
 }
 
 #article-header {

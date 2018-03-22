@@ -199,3 +199,7 @@
     }
   </script>
 @endsection
+
+@section('scripts')
+  <script src="{{ asset ("/js/admin-script.js") }}"></script>
+@endsection
