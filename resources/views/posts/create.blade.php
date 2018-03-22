@@ -50,7 +50,7 @@
                   @for ($i = 0; $i < $categories->count(); $i++)
                     <li class="list__item">
                       {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio-btn', 'id' => "radio{$i}"])}}
-                      <label for="radio{{$i}}" class="label">{{ $categories[$i]->category_name }}</label> <br>
+                      <label for="radio{{$i}}" class="radio-label">{{ $categories[$i]->category_name }}</label> <br>
                     </li>
                   @endfor
                   </ul>
