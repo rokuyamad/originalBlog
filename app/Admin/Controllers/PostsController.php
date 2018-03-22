@@ -92,6 +92,11 @@ class PostsController extends Controller
      */
     public function update($id, Request $request)
     {
+        $this->validate($request, [
+          'title'       => 'required|max:40',
+          'category_id' => 'required',
+        ]);
+
         $post = Post::find($id);
 
         $post->update([
@@ -130,6 +135,12 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+          'title'       => 'required|max:40',
+          'image'       => 'required|image',
+          'category_id' => 'required',
+        ]);
+
         $fileName = $request['image']->getClientOriginalName();
         Image::make($request['image'])->save(public_path() . '/image/topImages/' . $fileName);
 

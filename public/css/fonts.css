@@ -1,0 +1,46 @@
+@charset "UTF-8";
+#article-header h1 {
+  position: relative;
+  padding: 10px 0 2px 28px; }
+  #article-header h1:before, #article-header h1:after {
+    content: '';
+    position: absolute;
+    margin: auto; }
+  #article-header h1:before {
+    width: 12px;
+    height: 12px;
+    top: 0;
+    left: 14px;
+    background: #d14;
+    transform: rotate(50deg); }
+  #article-header h1:after {
+    width: 8px;
+    height: 8px;
+    top: 18px;
+    left: 6px;
+    background: #d14;
+    transform: rotate(20deg); }
+
+#preview h1,
+#preview h2,
+#preview h3,
+#preview h4,
+#preview h5,
+#preview h6,
+#preview p,
+#preview li {
+  color: #cfdae6;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; }
+
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6,
+.article p,
+.article li {
+  color: #cfdae6;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; }
+
+/*# sourceMappingURL=fonts.css.map */

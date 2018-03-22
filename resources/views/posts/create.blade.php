@@ -1,7 +1,7 @@
 @extends('admin::index')
 
-@section('addStyles')
-  <link rel="stylesheet" href="{{ asset("css/radio.css") }}">
+@section('styles')
+  <link rel="stylesheet" href="{{ asset("css/fonts.css") }}">
 @stop
 
 @section('content')
@@ -24,6 +24,16 @@
 
           <div class="container">
             {!! Form::model($post, ['url' => "/admin/posts", 'files' => true]) !!}
+
+              @if (count($errors) > 0)
+                  <div class="alert alert-danger alert-dismissable">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
 
               <div class="form-group col-md-12">
                 {!! Form::label('title', 'Title') !!}
@@ -50,7 +60,7 @@
                   @for ($i = 0; $i < $categories->count(); $i++)
                     <li class="list__item">
                       {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio-btn', 'id' => "radio{$i}"])}}
-                      <label for="radio{{$i}}" class="label">{{ $categories[$i]->category_name }}</label> <br>
+                      <label for="radio{{$i}}" class="radio-label">{{ $categories[$i]->category_name }}</label> <br>
                     </li>
                   @endfor
                   </ul>
@@ -90,10 +100,6 @@
     </div>
 
   </section>
-
-  @section('addScripts')
-    <script src="{{ asset ("/js/admin-script.js") }}"></script>
-  @endsection
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU"></script>
   <script>
@@ -155,4 +161,8 @@
         }
       }
   </script>
+@endsection
+
+@section('scripts')
+  <script src="{{ asset ("/js/admin-script.js") }}"></script>
 @endsection

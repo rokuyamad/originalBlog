@@ -21,6 +21,16 @@
           <div class="container">
             {!! Form::model($post, ['url' => "/admin/posts/{$post->id}", 'method' => 'patch', 'files' => true]) !!}
 
+              @if (count($errors) > 0)
+                  <div class="alert alert-danger alert-dismissable">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
               <div class="form-group col-md-12">
                 {!! Form::label('title', 'Title') !!}
                 {!! Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'タイトルを入力してください。']) !!}
@@ -50,7 +60,7 @@
                       @else
                         {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio-btn', 'id' => "radio{$i}"])}}
                       @endif
-                        <label for="radio{{$i}}" class="label">{{ $categories[$i]->category_name }}</label> <br>
+                        <label for="radio{{$i}}" class="radio-label">{{ $categories[$i]->category_name }}</label> <br>
                       </li>
                     @endfor
                   </ul>

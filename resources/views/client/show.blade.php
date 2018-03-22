@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ asset("/lib/highlight/style/solarized-dark.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/style.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/markdown.css") }}">
-  <link rel="stylesheet" href="{{ asset("css/h1.css") }}">
+  <link rel="stylesheet" href="{{ asset("css/fonts.css") }}">
 </head>
 <body>
   <div class="index">
