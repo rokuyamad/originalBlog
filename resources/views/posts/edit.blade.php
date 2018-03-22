@@ -50,7 +50,7 @@
                       @else
                         {{Form::radio('category_id', $categories[$i]->id, false, ['class' => 'radio-btn', 'id' => "radio{$i}"])}}
                       @endif
-                        <label for="radio{{$i}}" class="label">{{ $categories[$i]->category_name }}</label> <br>
+                        <label for="radio{{$i}}" class="radio-label">{{ $categories[$i]->category_name }}</label> <br>
                       </li>
                     @endfor
                   </ul>
