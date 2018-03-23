@@ -1,8 +1,8 @@
 @extends('admin::index')
 
-@section('styles')
-  <link rel="stylesheet" href="{{ asset("css/fonts.css") }}">
-@stop
+{{-- @section('styles') --}}
+{{--   <link rel="stylesheet" href="{{ asset("css/fonts.css") }}"> --}}
+{{-- @stop --}}
 
 @section('content')
   <section class="content-header">
@@ -163,6 +163,6 @@
   </script>
 @endsection
 
-@section('scripts')
-  <script src="{{ asset ("/js/admin-script.js") }}"></script>
-@endsection
+{{-- @section('scripts') --}}
+{{--   <script src="{{ asset ("/js/admin-script.js") }}"></script> --}}
+{{-- @endsection --}}

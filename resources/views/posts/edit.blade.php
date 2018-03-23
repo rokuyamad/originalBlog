@@ -1,5 +1,9 @@
 @extends('admin::index')
 
+{{-- @section('styles') --}}
+{{--   <link rel="stylesheet" href="{{ asset("css/fonts.css") }}"> --}}
+{{-- @stop --}}
+
 @section('content')
   <section class="content-header">
     <h1>
@@ -101,10 +105,6 @@
 
   </section>
 
-  @section('addScripts')
-    <script src="{{ asset ("/js/admin-script.js") }}"></script>
-  @endsection
-
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU"></script>
   <script>
     $('#tags').tagsInput({
@@ -200,6 +200,6 @@
   </script>
 @endsection
 
-@section('scripts')
-  <script src="{{ asset ("/js/admin-script.js") }}"></script>
-@endsection
+{{-- @section('scripts') --}}
+{{--   <script src="{{ asset ("/js/admin-script.js") }}"></script> --}}
+{{-- @endsection --}}
