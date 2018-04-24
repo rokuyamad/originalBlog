@@ -177,7 +177,7 @@ class PostsController extends Controller
     {
         $image = $request['image'];
         $fileName = $image->getClientOriginalName();
-        Image::make($image)->fit(760, 427.5)->move(base_path() . '/public/image/postImages', $fileName);
+        Image::make($image)->fit(760, 427)->save(base_path() . '/public/image/postImages' . $fileName);
 
         return response()->json(['fileName' => $fileName]);
     }
