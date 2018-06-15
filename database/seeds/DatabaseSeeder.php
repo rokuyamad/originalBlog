@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Encore\Admin\Auth\Database\Administrator;
+use Encore\Admin\Auth\Database\Menu;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Administrator::truncate();
+        Administrator::create([
+            'username' => 'daiki',
+            'password' => bcrypt('daiki0228'),
+            'name'     => 'rokuyama.daiki',
+            'avatar' => '/IMG_0671.jpg'
+        ]);
+
         Menu::truncate();
         Menu::insert([
             [
