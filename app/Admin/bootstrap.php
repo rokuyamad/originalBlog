@@ -19,3 +19,15 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+
+Admin::css('/packages/admin/jquery-tags-input/css/jquery.tagsinput.min.css');
+Admin::css('/lib/highlight/style/solarized-dark.css');
+Admin::css('css/radio.css');
+Admin::css('css/fonts.css');
+Admin::css('/css/admin.css');
+Admin::css('/css/markdown.css');
+
+Admin::js('/js/admin-script.js');
+Admin::js('/packages/admin/jquery-tags-input/js/jquery.tagsinput.min.js');
+Admin::js('/lib/marked/js/marked.min.js');
+Admin::js('/lib/highlight/js/highlight.pack.js');

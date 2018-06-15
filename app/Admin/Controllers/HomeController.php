@@ -97,7 +97,6 @@ class HomeController extends Controller
 
                     $column->append((new Box('Line', new Line()))->removable()->collapsable()->style('danger'));
                 });
-
             });
 
             $headers = ['Id', 'Email', 'Name', 'Company', 'Last Login', 'Status'];
