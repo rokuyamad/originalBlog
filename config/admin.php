@@ -32,6 +32,12 @@ return [
      */
     'title'  => 'Management portal',
 
+    'route' => [
+        'prefix' => 'admin',
+        'namespace' => 'App\\Admin\\Controllers',
+        'middleware' => ['web', 'admin'],
+    ],
+
     /*
      * Laravel-admin auth setting.
      */
