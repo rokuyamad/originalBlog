@@ -1,9 +1,5 @@
 @extends('admin::index')
 
-{{-- @section('styles') --}}
-{{--   <link rel="stylesheet" href="{{ asset("css/fonts.css") }}"> --}}
-{{-- @stop --}}
-
 @section('content')
   <section class="content-header">
     <h1>
@@ -107,20 +103,20 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU"></script>
   <script>
-    $('#tags').tagsInput({
-      height: '203px',
-      width: '100%'
-    });
-
-    $('.bswitch').on('click', function() {
-      $('#admin-article .switch').hide();
-      $('.' + this.id).show();
-    });
-
     $(function() {
-      marked.setOptions({
-        langPrefix: '',
+      $('#tags').tagsInput({
+        height: '203px',
+        width: '100%'
       });
+
+      $('.bswitch').on('click', function() {
+        $('#admin-article .switch').hide();
+        $('.' + this.id).show();
+      });
+
+      marked.setOptions({
+      langPrefix: '',
+    });
 
       // script only for edit.blade.php
       var html = marked($('#editor').val());
@@ -199,7 +195,3 @@
     }
   </script>
 @endsection
-
-{{-- @section('scripts') --}}
-{{--   <script src="{{ asset ("/js/admin-script.js") }}"></script> --}}
-{{-- @endsection --}}
