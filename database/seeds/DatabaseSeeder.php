@@ -129,6 +129,6 @@ class DatabaseSeeder extends Seeder
                 'icon'      => 'fa-list-alt',
                 'uri'       => 'categories',
             ],
-        // $this->call(UsersTableSeeder::class);
+        ]);       // $this->call(UsersTableSeeder::class);
     }
 }
