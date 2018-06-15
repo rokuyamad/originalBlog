@@ -156,8 +156,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Encore\Admin\Providers\AdminServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Encore\Admin\Providers\AdminServiceProvider::class,
 
     ],
 

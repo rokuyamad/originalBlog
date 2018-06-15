@@ -11,8 +11,5 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->resource('posts', PostsController::class);
-    $router->post('posts/uploadImage', 'PostsController@uploadImage');
-    $router->resource('comments', CommentsController::class);
-    $router->resource('categories', CategoriesController::class);
+
 });
