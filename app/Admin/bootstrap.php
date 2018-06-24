@@ -18,7 +18,7 @@
  *
  */
 
-Encore\Admin\Form::forget(['map', 'editor']);
+// Encore\Admin\Form::forget(['map', 'editor']);
 
 Admin::css('/packages/admin/jquery-tags-input/css/jquery.tagsinput.min.css');
 Admin::css('/lib/highlight/style/solarized-dark.css');
