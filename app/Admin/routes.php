@@ -9,7 +9,6 @@ Route::group([
     'namespace'     => Admin::controllerNamespace(),
     'middleware'    => ['web', 'admin'],
 ], function (Router $router) {
-
     $router->get('/', 'HomeController@index');
     $router->resource('posts', PostsController::class);
     $router->post('posts/uploadImage', 'PostsController@uploadImage');
