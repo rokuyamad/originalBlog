@@ -9,7 +9,7 @@ Route::group([
     // 'namespace'     => Admin::controllerNamespace(),
     'middleware'    => ['web', 'admin'],
 ], function (Router $router) {
-    $router->get('/', 'App/Admin/Controllers/HomeController@index');
+    $router->get('/', 'App\Admin\Controllers\HomeController@index');
     $router->resource('posts', PostsController::class);
     $router->post('posts/uploadImage', 'PostsController@uploadImage');
     $router->resource('comments', CommentsController::class);
