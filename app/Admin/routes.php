@@ -10,8 +10,8 @@ Route::group([
     'middleware'    => ['web', 'admin'],
 ], function (Router $router) {
     $router->get('/', 'App\Admin\Controllers\HomeController@index');
-    $router->resource('posts', PostsController::class);
-    $router->post('posts/uploadImage', 'PostsController@uploadImage');
-    $router->resource('comments', CommentsController::class);
-    $router->resource('categories', CategoriesController::class);
+    $router->resource('posts', App\Admin\Controllers\PostsController::class);
+    $router->post('posts/uploadImage', 'App\Admin\Controllers\PostsController@uploadImage');
+    $router->resource('comments', App\Admin\Controllers\CommentsController::class);
+    $router->resource('categories', App\Admin\Controllers\CategoriesController::class);
 });
