@@ -69,7 +69,6 @@
     ?>
 
     var html = marked("<?php echo $content ?>");
-    console.log(html);
     var mapRe = /\{\{\{(.+?), (.+?)\}\}\}/g;
     var mapArray;
     var mapHash;
@@ -111,7 +110,7 @@
     }
   </script>
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxlu4PN4SAHSfgjUQzMWVfK8o5YmnXYEU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkMGt-eCg8TU8RIYge-LxOMk-R9IOb9Y&callback=initMap">
   </script>
 </body>
 </html>
