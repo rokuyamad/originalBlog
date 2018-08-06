@@ -101,7 +101,7 @@
 
   </section>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkMGt-eCg8TU8RIYge-LxOMk-R9IOb9Y"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe-ZCBPyFsLINc3_1XaiENnevJ7M6ebaQ"></script>
   <script>
     $(function() {
       $('#tags').tagsInput({
